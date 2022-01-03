@@ -1,5 +1,7 @@
 package arkanoid;
 
+//ARKANOID
+
 // Adapted from https://gist.github.com/Miretz/f10b18df01f9f9ebfad5
 
 import java.awt.Color;
