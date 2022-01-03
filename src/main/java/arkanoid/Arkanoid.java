@@ -1,4 +1,4 @@
-package eus.ehu.adsi.arkanoid;
+package arkanoid;
 
 // Adapted from https://gist.github.com/Miretz/f10b18df01f9f9ebfad5
 

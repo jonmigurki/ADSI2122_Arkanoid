@@ -1,4 +1,4 @@
-package eus.ehu.adsi.arkanoid;
+package arkanoid;
 
 public class App {
 	
