@@ -7,6 +7,7 @@ package arkanoid;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowEvent;
@@ -15,10 +16,16 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.KeyStroke;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import eus.ehu.adsi.arkanoid.view.Ball;
 import eus.ehu.adsi.arkanoid.view.Config;
@@ -43,25 +50,67 @@ public class Arkanoid extends JFrame implements KeyListener {
 	private double lastFt;
 	private double currentSlice;	
 	
+	
+	Action leftAction;
+	Action rightAction;
+	
+	
 	public Arkanoid() {
 		
-		game = new Game ();
+		
+		game = new Game();
 
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setUndecorated(false);
 		this.setResizable(false);
 		this.setSize(Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT);
 		this.setTitle("Arkanoid");
 		this.setVisible(true);
-		this.addKeyListener(this);
+		
+	//	this.addKeyListener(this);
+		
+		/*
+		this.setFocusable(true);
+		
+        this.requestFocusInWindow();
+*/
+		
+		
 		this.setLocationRelativeTo(null);
 		this.createBufferStrategy(2);
 
 		bricks = Game.initializeBricks(bricks);
-
+		
+		
+		
+		
+		leftAction = new LeftAction();
+		rightAction = new RightAction();
+		
+		
+		
+		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("LEFT"), "left");
+		this.getRootPane().getActionMap().put("leftAction", leftAction);
+		
+		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("RIGHT"), "right");
+		this.getRootPane().getActionMap().put("rightAction", rightAction);
+		
+		
+		
 	}
 	
 	void run() {
+		
+
+		leftAction = new LeftAction();
+		rightAction = new RightAction();
+		
+		
+		
+		//this.addKeyListener(this);
+		
+		System.out.println("JUEGO EMPEZADO");
 
 		BufferStrategy bf = this.getBufferStrategy();
 		Graphics g = bf.getDrawGraphics();
@@ -71,6 +120,8 @@ public class Arkanoid extends JFrame implements KeyListener {
 		game.setRunning(true);
 
 		while (game.isRunning()) {
+			
+			System.out.println("AQUI");
 
 			long time1 = System.currentTimeMillis();
 
@@ -179,10 +230,12 @@ public class Arkanoid extends JFrame implements KeyListener {
 		}
 		switch (event.getKeyCode()) {
 		case KeyEvent.VK_LEFT:
+			System.out.println("IZQUIERDA");
 			paddle.moveLeft();
 			break;
 		case KeyEvent.VK_RIGHT:
 			paddle.moveRight();
+			System.out.println("DERECHA");
 			break;
 		default:
 			break;
@@ -201,5 +254,32 @@ public class Arkanoid extends JFrame implements KeyListener {
 	}
 
 	public void keyTyped(KeyEvent arg0) {}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public class LeftAction extends AbstractAction{
+		
+		
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			System.out.println("IZQUIERDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+			paddle.moveLeft();
+		}
+	}
+	
+	public class RightAction extends AbstractAction{
+		
+		
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			
+			System.out.println("DERECHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+			paddle.moveRight();
+		}
+	}
+	
 
 }

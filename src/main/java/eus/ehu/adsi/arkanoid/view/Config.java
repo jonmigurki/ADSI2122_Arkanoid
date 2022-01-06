@@ -28,8 +28,8 @@ public abstract class Config {
 	public static final String FONT = "Courier New";
 	public static final Color FONT_COLOR = Color.lightGray;
 	
-	public static final Color BACKGROUND_COLOR = Color.black;
-	public static final Color BALL_COLOR = Color.orange;
-	public static final Color PADDLE_COLOR = Color.red;
-	public static final Color BRICK_COLOR = Color.blue;
+	public static /*final*/ Color BACKGROUND_COLOR = Color.black;
+	public static /*final*/ Color BALL_COLOR = Color.orange;
+	public static /*final*/ Color PADDLE_COLOR = Color.red;
+	public static /*final*/ Color BRICK_COLOR = Color.blue;
 }
