@@ -1,0 +1,9 @@
+nombreUsuario: admin
+contrasena: 123
+correo: admin@gmail.com
+datosPersonalizacion: {"bola": 1, "paddle": 1, "fondo": 1, "ladrillo": 1, "sonido": 1}
+
+nombreUsuario: jugador
+contrasena: 123
+correo: jugador@gmail.com
+datosPersonalizacion: {"bola": 2, "paddle": 2, "fondo": 2, "ladrillo": 2, "sonido": 2}
