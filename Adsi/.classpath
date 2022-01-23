@@ -32,5 +32,12 @@
 	<classpathentry kind="lib" path="/home/jon/Descargas/sqlite-jdbc-3.7.2.jar.zip"/>
 	<classpathentry kind="lib" path="/home/jon/Descargas/java-json.jar.zip"/>
 	<classpathentry kind="lib" path="/home/jon/Descargas/java-json.jar"/>
+	<classpathentry kind="lib" path="/home/jon/Escritorio/json-20180813.jar"/>
+	<classpathentry kind="lib" path="/home/jon/Escritorio/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/home/jon/Escritorio/rs2xml.jar"/>
+	<classpathentry kind="lib" path="/home/jon/Escritorio/gson-2.6.2.jar"/>
+	<classpathentry kind="lib" path="/home/jon/Escritorio/java-json.jar"/>
+	<classpathentry kind="lib" path="/home/jon/Escritorio/c2dm.jar"/>
+	<classpathentry kind="lib" path="/home/jon/Escritorio/sqlite-jdbc-3.7.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

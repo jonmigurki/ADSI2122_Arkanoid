@@ -93,7 +93,7 @@ public class Arkanoid extends JFrame implements KeyListener {
 		
 	}
 	
-	void run() {
+	public void run() {
 		
 
 		leftAction = new LeftAction();

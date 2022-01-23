@@ -1,5 +1,6 @@
 package eus.ehu.adsi.arkanoid;
 
+import eus.ehu.adsi.arkanoid.view.Arkanoid;
 import eus.ehu.adsi.arkanoid.view.IU_Login;
 import eus.ehu.adsi.arkanoid.view.IU_MenuPrincipal;
 
